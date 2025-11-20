@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Get platforms without auth",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create platform",
+      "method": "POST",
+      "path": "/",
+      "headers": {
+        "X-Session-Token": "test-token"
+      },
+      "body": {
+        "name": "Netflix",
+        "icon": "Tv",
+        "color": "bg-red-500"
+      },
+      "expectedStatus": 401,
+      "bodyMatcher": "partial"
+    }
+  ]
+}
